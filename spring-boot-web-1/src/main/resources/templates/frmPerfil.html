@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Perfil del Usuario</title>
+</head>
+<body>
+	<table border = "3">
+		
+		<thead>
+			<tr>
+				<th>Apellidos</th>
+				<th>Nombre</th>
+				<th>Email</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr>
+				<td th:text = "${usu.ape}"></td>
+				<td th:text = "${usu.nom}"></td>
+				<td th:text = "${usu.email}"></td>
+			</tr>
+		</tbody>
+		
+	</table>
+</body>
+</html>

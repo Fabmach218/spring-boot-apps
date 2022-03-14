@@ -1,0 +1,116 @@
+package fia.usmp.dao;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.ResultSetExtractor;
+import org.springframework.stereotype.Component;
+
+import fia.usmp.model.Estudiante;
+
+@Component
+public class EstudianteDAO implements IEstudianteDAO{
+	
+	private static final Logger log = LoggerFactory.getLogger(EstudianteDAO.class);
+	private JdbcTemplate jdbcTemplate;
+
+	private String filtro;
+	
+	@Override
+	public void setFiltro(String filtro) {
+		this.filtro = filtro;
+	}
+	
+	public EstudianteDAO(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
+	}
+	
+	@Override
+	public List<Estudiante> getEstudiantes() {
+		
+		String sql = "SELECT * FROM ALUMNOS";
+		
+		if(filtro != null) {
+			sql += " " + filtro;
+		}
+		
+		return jdbcTemplate.query(sql, new ResultSetExtractor<List<Estudiante>>() {
+
+			@Override
+			public List<Estudiante> extractData(ResultSet rs) throws SQLException, DataAccessException {
+				
+				List<Estudiante> lista = new ArrayList<Estudiante>();
+				Estudiante e;
+				
+				try {
+					
+					while(rs.next()) {
+						
+						e = new Estudiante();
+						
+						e.setCod(rs.getString(1));
+						e.setNom(rs.getString(2));
+						e.setSeccion(rs.getString(3));
+						e.setCorreo(rs.getString(4));
+						e.setDis(rs.getString(5));
+						e.setProv(rs.getString(6));
+						e.setDep(rs.getString(7));
+						e.setDni(rs.getString(8));
+						e.setModing(rs.getString(9));
+						e.setSeming(rs.getString(10));
+						
+						lista.add(e);
+						
+					}
+					
+				}catch (Exception ex) {
+					lista.add(new Estudiante("", "", "", "", "", "", "", "", "", ""));
+				}
+				
+				return lista;
+				
+			}
+			
+			
+		});
+		
+	}
+
+	@Override
+	public int getCantidad() {
+		
+		String sql = "SELECT COUNT(*) FROM ALUMNOS";
+		
+		if(filtro != null) {
+			sql += " " + filtro;
+		}
+		
+		return jdbcTemplate.query(sql, new ResultSetExtractor<Integer>() {
+			@Override
+			public Integer extractData(ResultSet rs) throws SQLException, DataAccessException {
+				
+				Integer cant = null;
+				
+				try {
+					
+					while(rs.next()) {
+						cant = rs.getInt(1);
+					}
+					
+				}catch (Exception e) {
+					
+				}
+				
+				return cant;
+				
+			}
+		});
+	}
+	
+}

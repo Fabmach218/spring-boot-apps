@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Lista por género y edad</title>
+</head>
+<body>
+
+	<h1>Mujeres mayores de edad</h1>
+	
+		<table border="3">
+		
+			<tr>
+			
+				<th>Código</th>
+				<th>Apellido</th>
+				<th>Nombre</th>
+				<th>Género</th>
+				<th>Edad</th>
+				
+			</tr>
+		
+			<tr th:each = "alumno : ${listaM}">
+			
+				<td th:text = ${alumno.cod}></td>
+				<td th:text = ${alumno.ape}></td>
+				<td th:text = ${alumno.nom}></td>
+				<td th:text = ${alumno.gen}></td>
+				<td th:text = ${alumno.edad}></td>
+			
+			</tr>
+		
+		</table>
+	
+	<h1>Hombres menores de edad</h1>
+	
+		<table border="3">
+		
+			<tr>
+			
+				<th>Código</th>
+				<th>Apellido</th>
+				<th>Nombre</th>
+				<th>Género</th>
+				<th>Edad</th>
+				
+			</tr>
+		
+			<tr th:each = "alumno : ${listaH}">
+			
+				<td th:text = ${alumno.cod}></td>
+				<td th:text = ${alumno.ape}></td>
+				<td th:text = ${alumno.nom}></td>
+				<td th:text = ${alumno.gen}></td>
+				<td th:text = ${alumno.edad}></td>
+			
+			</tr>
+		
+		</table>
+	
+
+</body>
+</html>

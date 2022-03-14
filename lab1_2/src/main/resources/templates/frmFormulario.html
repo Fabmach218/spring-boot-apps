@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Ingreso de productos</title>
+</head>
+<body>
+
+	<form th:action="@{/form}" method="post">
+		
+		<div>
+			<label>Código de producto</label>
+			<input type="text" name="codigo" id="codigo">
+		</div>
+		
+		<div>
+			<label>Nombre</label>
+			<input type="text" name="nom" id="nom">
+		</div>
+		
+		<div>
+			<label>Marca</label>
+			<input type="text" name="marca" id="marca">
+		</div>
+		
+		<div>
+			<label>Precio</label>
+			<input type="number" name="precio" id="precio">
+		</div>
+		
+		<div>
+			<input type="submit" value="Registrar" id="btnRegistrar">
+		</div>
+		
+		<div>
+			<input type="submit" value="Listar" id="btnListar">
+		</div>
+	
+	</form>
+
+
+</body>
+</html>

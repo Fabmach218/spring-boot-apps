@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Formulario</title>
+</head>
+<body>
+
+	<form th:action = "@{/editar/} + ${persona.id}" th:object="${persona}" method = "post">
+		
+		<div>
+			<label>Nombre</label>
+			<input type = "text" th:field = "*{nombre}">
+		</div>
+		
+		<div>
+			<label>Apellido</label>
+			<input type = "text" th:field = "*{apellido}">
+		</div>
+		
+		<div>
+			<label>Email</label>
+			<input type = "text" th:field = "*{email}">
+		</div>
+		
+		<div>
+			<label>Telefono</label>
+			<input type = "number" th:field = "*{telefono}">
+		</div>
+		
+		<div>
+			<label>Direccion</label>
+			<input type = "text" th:field = "*{direccion}">
+		</div>
+
+		<div>
+			<input type = "submit" value = "Editar Persona" th:field = "btnEditar">
+		</div>
+		
+	</form>
+
+
+</body>
+</html>

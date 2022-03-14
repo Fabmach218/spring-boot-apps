@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${titulo}"></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css">
+</head>
+
+<body style="background-image:url(../img/img3.jpg);
+            background-attachment: fixed;
+            background-position: fill;
+            background-repeat: no-repeat;
+            background-size: 100%">
+    
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        
+        <a class="navbar-brand" href="#">Comedor popular: Virgen de las Mercedes</a>
+
+        <ul class="navbar-nav mr-auto">
+        </ul>
+
+        <ul class="navbar-nav">
+
+			<li class="nav-item">
+                <a class="nav-link" href="/">Inicio</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/listaMenus">Menús</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/listaPlatos">Platos</a>
+            </li>
+
+			<li class="nav-item">
+                <a class="nav-link" href="/listaInsumos">Insumos</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/listaEmpleados">Empleados</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/listaClientes">Clientes</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/cerrarSesion" onclick="return confirm('¿Seguro que desea cerrar sesión?')">Cerrar Sesión</a>
+            </li>
+
+        </ul>
+    </nav>
+
+
+    <div class="container" style="background-color:rgba(255, 255, 255, 0.5);">
+		<h1 th:text="${titulo}" style="background-color: #C29B61; color: #804000;"></h1>
+		
+		<form th:action = "@{/listaEmpleados}" class="form-inline">
+		
+			<label>Criterios de búsqueda: </label>
+			
+			<input type="text" placeholder="Nombre" name="nom" />
+			
+			<select name = "sexo">
+				<option value = "">- Sexo -</option>
+				<option value = "Masculino">Masculino</option>
+				<option value = "Femenino">Femenino</option>
+			</select>
+			
+			<select name = "cargo">
+				<option value = "">- Cargo -</option>
+				<option th:each = "c: ${listaCargos}" th:value = "${c}" th:text = "${c}"></option>
+			</select>
+			
+			<input type="submit" value="Buscar" />
+		
+		</form>
+		
+		<p><a th:href="@{/formEmpleado}" class="btn btn-success btn-xs">Crear empleado</a></p>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>DNI</th>
+					<th>Nombre completo</th>
+					<th>Edad</th>
+					<th>Sexo</th>
+					<th>Cargo</th>
+                    <th>Perfil</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="e: ${listaEmpleados}">
+					<td th:text="${e.dni}"></td>
+					<td th:text="${e.ape_pat} + ' ' + ${e.ape_mat} + ', ' + ${e.nombres}"></td>
+					<td th:text="${e.edad}"></td>
+					<td th:text="${e.sexo}"></td>
+					<td th:text="${e.cargo}"></td>
+					<td><a class="btn btn-success btn-xs" th:href="@{/perfilEmpleado/} + ${e.dni}" th:text="'Ver Perfil'"></a></td>
+				</tr>
+			</tbody>
+
+		</table>
+
+    </div>
+
+    <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Lista de personas</title>
+</head>
+<body>
+
+	<h1>¡¡¡Bienvenido a SQLite CRUD!!!</h1>
+
+	<a th:href = "@{/form}">Ingresar un registro</a>
+
+	<table border = "3">
+		
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Apellido</th>
+				<th>Email</th>
+				<th>Telefono</th>
+				<th>Direccion</th>
+				<th>Editar</th>
+				<th>Eliminar</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each = "persona : ${listaPersonas}">
+				<td th:text = "${persona.nombre}"></td>
+				<td th:text = "${persona.apellido}"></td>
+				<td th:text = "${persona.email}"></td>
+				<td th:text = "${persona.telefono}"></td>
+				<td th:text = "${persona.direccion}"></td>
+				<td><a th:href="@{/form/} + ${persona.id}">Editar</a></td>
+				<td><a th:href="@{/eliminar/} + ${persona.id}" onclick="return confirm('¿Desea eliminar el registro?');">Eliminar</a></td>
+			</tr>
+		</tbody>
+		
+	</table>
+</body>
+</html>

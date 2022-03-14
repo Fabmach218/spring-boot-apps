@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Lista de productos</title>
+</head>
+<body>
+
+	<table border="3">
+	
+		<tr>
+		
+			<th>Código</th>
+			<th>Nombre</th>
+			<th>Marca</th>
+			<th>Modelo</th>
+			<th>Precio</th>
+			<th>Descripción</th>
+		
+		</tr>
+	
+		<tr th:each = "objE : ${lista}">
+		
+			<td th:text = ${objE.cod}></td>
+			<td th:text = ${objE.nom}></td>
+			<td th:text = ${objE.marca}></td>
+			<td th:text = ${objE.modelo}></td>
+			<td th:text = ${objE.precio}></td>
+			<td th:text = ${objE.desc}></td>
+		
+		</tr>
+	
+	
+	
+	
+	</table>
+
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Formulario de registro</title>
+</head>
+<body>
+
+	<h1>Registro de productos</h1>
+	
+	<form th:action = "@{/registrar}" method = "post">
+	
+		<div>
+			<label>Código</label>
+			<input type="text" name="cod">
+		</div>
+		
+		<div>
+			<label>Nombre</label>
+			<input type="text" name="nom">
+		</div>
+		
+		<div>
+			<label>Marca</label>
+			<input type="text" name="marca">
+		</div>
+		
+		<div>
+			<label>Modelo</label>
+			<input type="text" name="modelo">
+		</div>
+	
+		<div>
+			<label>Precio</label>
+			<input type="number" name="precio">
+		</div>
+	
+		<div>
+			<label>Descripción</label>
+			<input type="text" name="desc">
+		</div>
+	
+		<div>
+			<input type="submit" value="Registrar Producto" name="btnRegistrar">
+		</div>
+	
+	</form>
+	
+	<h1>Búsqueda por marca</h1>
+	
+	<form th:action = "@{/listaxMarca}" method = "post">
+	
+		<div>
+			<label>Marca</label>
+			<input type="text" name="marca">
+		</div>
+
+		<div>
+			<input type="submit" value="Listar por marca" name="btnListar">
+		</div>
+
+	</form>
+	
+</body>
+</html>

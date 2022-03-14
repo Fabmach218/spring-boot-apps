@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Formulario de registro</title>
+</head>
+<body>
+
+	<h1>Registro de alumno</h1>
+	
+		<form th:action = "@{/registrar}" method = "post">
+		
+			<div>
+				<label>Código</label>
+				<input type="text" name="cod">
+			</div>
+			
+			<div>
+				<label>Apellido</label>
+				<input type="text" name="ape">
+			</div>
+			
+			<div>
+				<label>Nombre</label>
+				<input type="text" name="nom">
+			</div>
+			
+			<div>
+				<label>Género</label>
+				<input type="text" name="gen">
+			</div>
+		
+			<div>
+				<label>Edad</label>
+				<input type="number" name="edad">
+			</div>
+		
+			<div>
+				<input type="submit" value="Registrar Alumno" name="btnRegistrar">
+			</div>
+		
+		</form>
+		
+	<h1>Listado por género y edad</h1>
+		
+		<form th:action = "@{/listaHM}" method = "post">
+	
+			<div>
+				<input type="submit" value="Listar por género y edad" name="btnListar">
+			</div>
+	
+		</form>
+
+
+</body>
+</html>

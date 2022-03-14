@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Lista de alumnos</title>
+</head>
+<body>
+
+	<table border = "3">
+	
+		<tr>
+		
+			<th>Código</th>
+			<th>Estudiante</th>
+			<th>Sección</th>
+			<th>Correo</th>
+			<th>Distrito</th>
+			<th>Provincia</th>
+			<th>Departamento</th>
+			<th>DNI</th>
+			<th>Modalidad ingreso</th>
+			<th>Semestre ingreso</th>
+			<th>Editar</th>
+			<th>Eliminar</th>
+		
+		</tr>
+		
+		 <tr th:each = "objE : ${lista}">
+		
+			<td th:text = ${objE.cod}></td>
+			<td th:text = ${objE.nom}></td>
+			<td th:text = ${objE.seccion}></td>
+			<td th:text = ${objE.correo}></td>
+			<td th:text = ${objE.dis}></td>
+			<td th:text = ${objE.prov}></td>
+			<td th:text = ${objE.dep}></td>
+			<td th:text = ${objE.dni}></td>
+			<td th:text = ${objE.moding}></td>
+			<td th:text = ${objE.seming}></td>
+			<td><a th:href="@{/form/} + ${objE.cod}">Editar</a></td>
+			<td><a th:href= "@{/eliminar/} + ${objE.cod}">Eliminar</a></td>
+		
+		</tr>
+	 
+	</table>
+
+	<p th:text = ${cant}></p>
+
+</body>
+</html>

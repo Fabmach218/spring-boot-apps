@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title th:text="*{titulo}"></title>
+</head>
+<body>
+
+	<h1 th:text="*{titulo}"></h1>
+	
+	<form th:action="@{/form}" th:object="${e}" method = "post">
+		
+		<div>
+			<label>Código</label>
+			<input type="text" th:field="*{cod}" readonly>
+		</div>
+		
+		<div>
+			<label>Nombre</label>
+			<input type="text" th:field="*{nom}">
+		</div>
+		
+		<div>
+			<label>Sección</label>
+			<input type="text" th:field="*{seccion}">
+		</div>
+		
+		<div>
+			<label>Correo</label>
+			<input type="text" th:field="*{correo}">
+		</div>
+	
+		<div>
+			<label>Distrito</label>
+			<input type="text" th:field="*{dis}">
+		</div>
+	
+		<div>
+			<label>Provincia</label>
+			<input type="text" th:field="*{prov}">
+		</div>
+	
+		<div>
+			<label>Departamento</label>
+			<input type="number" th:field="*{dep}">
+		</div>
+	
+		<div>
+			<label>DNI</label>
+			<input type="text" th:field="*{dni}">
+		</div>
+		
+		<div>
+			<label>Modalidad ingreso</label>
+			<input type="text" th:field="*{moding}">
+		</div>
+		
+		<div>
+			<label>Semestre ingreso</label>
+			<input type="text" th:field="*{seming}">
+		</div>
+		
+		<div>
+			<input type="submit" value = "Guardar estudiante">
+		</div>
+	
+	</form>
+
+	<p th:text=*{err}></p>
+
+</body>
+</html>

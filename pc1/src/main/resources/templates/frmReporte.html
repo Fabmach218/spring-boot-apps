@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Reporte estadístico</title>
+</head>
+<body>
+
+	<table border="3">
+	
+		<tr>
+			<th colspan="2">Estadísticas</th>
+		</tr>
+	
+		<tr>
+			<th>Cantidad de alumnos</th>
+			<td th:text = ${stats.qAlumnos}></td>
+		</tr>
+		
+		<tr>
+			<th>Alumnos aprobados</th>
+			<td th:text = ${stats.qAprobados}></td>
+		</tr>
+		
+		<tr>
+			<th>Alumnos desaprobados</th>
+			<td th:text = ${stats.qDesaprobados}></td>
+		</tr>
+		
+		<tr>
+			<th>Porcentaje de aprobados</th>
+			<td th:text = ${stats.porAprobados}></td>
+		</tr>
+		
+		<tr>
+			<th>Porcentaje de desaprobados</th>
+			<td th:text = ${stats.porDesaprobados}></td>
+		</tr>
+		
+		<tr>
+			<th>Nota mayor</th>
+			<td th:text = ${stats.mayorGen}></td>
+		</tr>
+		
+		<tr>
+			<th>Nota menor</th>
+			<td th:text = ${stats.menorGen}></td>
+		</tr>
+		
+		<tr>
+			<th>Promedio</th>
+			<td th:text = ${stats.promGen}></td>
+		</tr>
+		
+		<tr>
+			<th>Mediana</th>
+			<td th:text = ${stats.mediana}></td>
+		</tr>
+	
+	</table>
+
+
+</body>
+</html>

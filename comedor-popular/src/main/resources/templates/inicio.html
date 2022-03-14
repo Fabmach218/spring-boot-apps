@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio: Comedor Popular Virgen de las Mercedes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css">
+</head>
+
+<body style="background-image:url(../img/Popular.png);
+			background-position: fill;
+            background-attachment:fixed;
+             background-repeat: no-repeat;
+             background-size: 100%">
+    
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        
+        <a class="navbar-brand" href="">Comedor popular: Virgen de las Mercedes</a>
+
+        <ul class="navbar-nav mr-auto">
+        </ul>
+
+        <ul class="navbar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link" href="/">Inicio</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/listaMenus">Menús</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/listaPlatos">Platos</a>
+            </li>
+
+			<li class="nav-item">
+                <a class="nav-link" href="/listaInsumos">Insumos</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/listaEmpleados">Empleados</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/listaClientes">Clientes</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/cerrarSesion" onclick="return confirm('¿Seguro que desea cerrar sesión?')">Cerrar Sesión</a>
+            </li>
+
+        </ul>
+    </nav>
+
+    <div class="container" style="background-color:rgba(255, 255, 255, 0.5);">
+		
+        <h1 th:text="${bienvenido}" style="background-color: #C29B61; color: #804000;"></h1>
+
+            <div class="row" align="center">
+                     
+                        <div class="col-md-4">
+                          <div class="card mb-3" style="max-width: 230px;">
+                            <div class="row no-gutters">
+                              <div class="col-md-12">
+                                   <img src="img/Menu.jpg" style="border: 7px solid; color: black;" width="180px" height="160"  class="card-img">
+                                   <a class="nav-link" href="/listaMenus"><p class="card-text" align="center">
+                                    <b>Menús</b><small class="text-muted"> </small></p></a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>              
+                      
+                        <div class="col-md-4">
+                          <div class="card mb-3" style="max-width: 230px;">
+                            <div class="row no-gutters">
+                              <div class="col-md-12">
+                                <img src="img/receta1.png" style="border: 7px solid; color: black;" width="180px" height="160" class="card-img">
+                                <a class="nav-link" href="/listaPlatos"><p class="card-text">
+                                    <b>Platos</b><small class="text-muted"> </small></p></a>
+                              </div> 
+                            </div> 
+                          </div>
+                        </div>
+
+                       <div class="col-md-4">
+                          <div class="card mb-3" style="max-width: 230px;">
+                            <div class="row no-gutters">
+                              <div class="col-md-12">
+                                <img src="img/Insumos.jpg" style="border: 7px solid; color: black;" width="180px" height="160" class="card-img">
+                                <a class="nav-link" href="/listaInsumos"><p class="card-text">
+                                    <b>Insumos</b><small class="text-muted"> </small></p></a>
+                              </div>                              
+                            </div>
+                          </div>
+                      </div>
+
+            </div>
+            <br>
+            <div class="row" align="center">
+                    
+                      <div class="col-md-6">
+                          <div class="card mb-3" style="max-width: 230px;">
+                            <div class="row no-gutters">
+                              <div class="col-md-12">
+                               <img src="img/Empleado01.jpg" style="border: 7px solid; color: black;" width="180px" height="160" class="card-img">
+                                <a class="nav-link" href="/listaEmpleados"><p class="card-text">
+                                    <b>Empleados</b><small class="text-muted"> </small></p></a>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+
+                      <div class="col-md-6">
+                          <div class="card mb-3" style="max-width: 230px;">
+                            <div class="row no-gutters">
+                              <div class="col-md-12">
+                                <img src="img/Cliente01.jpg" style="border: 7px solid; color: black;" width="180px" height="160" class="card-img">
+                                <a class="nav-link" href="/listaClientes"><p class="card-text">
+                                    <b>Clientes</b><small class="text-muted"> </small></p></a>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+
+              </div>
+        
+        
+    </div>
+
+    <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

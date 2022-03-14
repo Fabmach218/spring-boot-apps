@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;spring-boot-data-jpa&apos; to &apos;spring-boot-data-jpa-3&apos;&#x0D;&#x0A;- Original element: &apos;spring-boot-data-jpa&apos;&#x0D;&#x0A;- Renamed element: &apos;spring-boot-data-jpa&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;spring-boot-data-jpa&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=spring-boot-data-jpa" name="spring-boot-data-jpa-3" references="true" stamp="1604955258050" version="1.0"/>
+</session>
